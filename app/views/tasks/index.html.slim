@@ -1,0 +1,12 @@
+table
+  thead
+    tr
+      th TITLE
+      th DUE DATE
+      th COMPLETE DATE
+  - @tasks.each do |task|
+    tbody
+      tr
+        td = task.title
+        td = format_datetime(task.due_date)
+        td = format_datetime(task.completed_at)
