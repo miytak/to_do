@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+ActiveRecord::Base.transaction do
+  unless Task.any?
+    Task.create(title: 'room cleaning', due_date: 1.day.since)
+    Task.create(title: 'reading books', due_date: 2.days.since)
+    Task.create(title: 'learning english ', due_date: 1.year.since)
+  end
+end
