@@ -7,13 +7,13 @@ new Vue({
     tasks: []
   },
   methods: {
-    fetchTasks: function() {
+    getTasks: function() {
       axios.get('/api/tasks').then((response) => {
         this.tasks = response.data.tasks;
       })
     }
   },
   created: function() {
-    this.fetchTasks()
+    this.getTasks()
   }
 })
