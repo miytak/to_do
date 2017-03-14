@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import axios from 'axios'
 
-var vm = new Vue({
+new Vue({
   el: '#tasks',
   data: {
     tasks: []
@@ -12,7 +12,8 @@ var vm = new Vue({
         this.tasks = response.data.tasks;
       })
     }
+  },
+  created: function() {
+    this.fetchTasks()
   }
 })
-
-vm.fetchTasks();
