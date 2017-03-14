@@ -4,9 +4,9 @@ table
       th TITLE
       th DUE DATE
       th COMPLETE DATE
-  - @tasks.each do |task|
-    tbody
-      tr
-        td = task.title
-        td = format_datetime(task.due_date)
-        td = format_datetime(task.completed_at)
+  tbody#tasks
+    tr v-for="task in tasks"
+      td = "{{ task.title }}"
+      td = "{{ task.due_date }}"
+      td = "{{ task.completed_at }}"
+= javascript_pack_tag 'tasks'
